@@ -1,0 +1,18 @@
+name: build-test
+on:
+  push:
+    branches:
+      - beta-test-build
+  workflow_dispatch:
+
+jobs:
+  snap:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: snapcore/action-build@v1
+      id: snapcraft
+    - uses: actions/upload-artifact@v2
+      with:
+        name: 'thunderbird-beta-snap'
+        path: ${{ steps.snapcraft.outputs.snap}}
