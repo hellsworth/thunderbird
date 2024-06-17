@@ -235,7 +235,6 @@ parts:
     plugin: nil
     override-prime: |
       cp "$CRAFT_PROJECT_DIR/thunderbird.launcher" "$CRAFT_PRIME/"
-      cp "$CRAFT_PROJECT_DIR/patch-default-profile.py" "$CRAFT_PRIME/"
 
   # Find files provided by the base and platform snap and ensure they aren't
   # duplicated in this snap
