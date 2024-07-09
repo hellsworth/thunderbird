@@ -54,9 +54,13 @@ plugs:
   etc-thunderbird-policies:
     interface: system-files
     read: [/etc/thunderbird/policies]
-  dot-thunderbird:
-    interface: personal-files
-    read: [$HOME/.thunderbird]
+#  dot-thunderbird:
+#    interface: personal-files
+#    read: [$HOME/.thunderbird]
+
+layout:
+  $HOME/.thunderbird:
+    bind: $SNAP_USER_COMMON/.thunderbird
 
 parts:
   rust:
